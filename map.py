@@ -6,7 +6,7 @@ st.title('Crime')
 
 # preprocess and clean data
 path = open('document.txt', 'r').read().strip()
-df_data = pd.read_feather(f'{path}/2018_street.feather')
+df_data = pd.read_feather(f'{path}/2019_street.feather')
 df_data.drop(columns=['Crime ID', 'Reported by', 'Location', 'LSOA name', 'Context'], inplace=True)
 df_data.rename(columns={"Longitude": "lon", "Latitude": "lat"}, inplace=True)
 df_data = df_data[~df_data['lon'].isna()]
